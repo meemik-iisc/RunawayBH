@@ -20,7 +20,7 @@ v_bh    = 1000*1e5                  #cm/s
 M_bh    = 2e7*Msun                  #g
 R_bondi = 2*G*M_bh/(v_bh**2)        #cm
 print(f"Bondi radius: {R_bondi/pc:.2e} pc")
-epsilon = 0.1*R_bondi                   #cm
+epsilon = 10*pc                   #cm
 
 #Calculate Virial Temp at 1kpc
 r_vir   = 1e3*pc        #cm          
