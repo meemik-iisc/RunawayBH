@@ -36,7 +36,7 @@ K = (kB*T_vir/(mu*mp))*(rho_vir**(1-gamma))
 
 #Code Units
 L_code  = 1.0*kpc        #cm
-v_code  = 1e6            #cm/s
+v_code  = 1e8            #cm/s
 rho_code= 1.0*mp         #g/cm^3
 
 M_code  = rho_code*L_code**3
