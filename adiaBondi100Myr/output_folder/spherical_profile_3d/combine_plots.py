@@ -54,7 +54,7 @@ def create_subplots():
         filename = f"t_{t}.png"
         
         # Create figure with 2x2 subplots
-        fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+        fig, axes = plt.subplots(2, 2, figsize=(12, 8))
         axes = axes.flatten()
         
         # Extract time number from filename for super title
