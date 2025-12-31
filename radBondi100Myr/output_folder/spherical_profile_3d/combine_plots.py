@@ -28,8 +28,8 @@ from pathlib import Path
 # CONFIGURATION
 # ============================================================================
 
-FOLDERS = ["dens", "pres", "cooling_rate", "temp", "velr", "tcool"]
-Plot_name = ["Density", "Pressure", "Cooling Rate", "Temperature", "Radial Velocity", "Cooling Time"]
+FOLDERS = ["dens", "pres", "cooling_rate", "temp", "velr", "time_scales"]
+Plot_name = ["Density", "Pressure", "Cooling Rate", "Temperature", "Radial Velocity", "Time Scales"]
 OUTPUT_FOLDER = "data"
 OUTPUT_VIDEO = "data_video.mp4"
 NUM_FILES = 11
