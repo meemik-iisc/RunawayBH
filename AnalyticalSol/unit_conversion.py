@@ -18,20 +18,20 @@ v_bh    = 1000*1e5                  #cm/s
 M_bh    = 2e7*Msun                  #g
 R_bondi = 2*G*M_bh/(v_bh**2)        #cm
 epsilon = 0.1*R_bondi               #cm
-
-#Calculate Virial Temp at 1kpc
-r_vir   = kpc        #cm          
-T_vir   = G*M_bh*mp/(r_vir*kB)  #K
-
-#Calculate Density if pressure equilibrium with CGM at 1kpc
+rho_vir = 10*mp                    #g/cm^3
 rho_cgm = 1e-3*mp       #g/cm^3
 T_cgm   = 1e6           #K
 cs_cgm  = np.sqrt(kB*T_cgm/(mu*mp))
-rho_vir = rho_cgm*T_cgm/T_vir
+
+#Calculate Virial Temp at 1kpc
+r_vir   = kpc        #cm          
 
 #Calculate Polytropic Constant
-K = (kB*T_vir/(mu*mp))*(rho_vir**(1-gamma))
+K = ((rho_cgm*(cs_cgm**2))/(rho_vir**(gamma)))
 # print(f"Polytropic Constant = {K:.2e}")
+#Calculate Temperature
+T_vir = K*mu*mp*(rho_vir**(gm1))/kB
+
 
 
 #Code Units
