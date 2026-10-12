@@ -47,7 +47,7 @@ v_wind  = 50*kms       #cm/s
 R0      = 0.25*kpc
 t_sys   = 70*1e6*s_yr   #s
 eta     = 0.1
-M_dot_w = 1e-4*Msun/s_yr
+M_dot_w = 1*Msun/s_yr
 Rinj    = 50*pc
 #Code Units
 L_code  = 1.0*kpc        #cm

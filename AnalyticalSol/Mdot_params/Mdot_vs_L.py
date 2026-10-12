@@ -49,8 +49,8 @@ def n_cgm(L_kpc):
     n_ISM_L = n_ISM_mp_cc * np.exp(-L_kpc / H_ISM_kpc)
     n_CGM_L = n_CGM_mp_cc * np.exp(-(L_kpc - L_tr_kpc) / H_CGM_kpc)
     w = 0.5 * (1.0 + np.tanh((L_kpc - L_tr_kpc) / dL_kpc))
-    return (1.0 - w) * n_ISM_L + w * n_CGM_L
-    # return n_ISM_L*np.exp(-L_kpc/10)
+    # return (1.0 - w) * n_ISM_L + w * n_CGM_L
+    return n_ISM_L*np.exp(-L_kpc/10)
 
 def v_bh(L_kpc):
     return vbh_f * np.ones_like(L_kpc)
@@ -61,7 +61,7 @@ def v_w(L_kpc):
     L_tr = 10
     vw_0_L = vw_0 * np.exp(-L_kpc / (10*H_ISM_kpc))
     vw_f_L = vw_f* np.exp(-(L_kpc - L_tr) / (10*H_CGM_kpc))
-    w = 0.5 * (1.0 + np.tanh((L_kpc - L_tr) / dL))
+    # w = 0.5 * (1.0 + np.tanh((L_kpc - L_tr) / dL))
     # return (1.0 - w) * vw_0_L + w * vw_f_L
     # return vw_f* np.exp(np.exp(-1*(L_kpc / dL)))
     # return vw_0* np.exp(-1*(L_kpc / dL))
@@ -73,11 +73,11 @@ def M_dot(L_kpc):
     M_max  = 0.1
     M_min  = 0.01  # floor it decays TO
     
-    rise  = 1 - np.exp(-L_kpc / dL_rise)
-    decay = (M_max - M_min) * np.exp(-L_kpc / dL_decay) + M_min
-    Mdot  = rise * decay
-    return Mdot
-    # return 1e-3*np.exp(L_kpc/10)
+    # rise  = 1 - np.exp(-L_kpc / dL_rise)
+    # decay = (M_max - M_min) * np.exp(-L_kpc / dL_decay) + M_min
+    # Mdot  = rise * decay
+    # return Mdot
+    return 1e-3*np.exp(L_kpc/10)
 
 def R_0(L_kpc):
     Mdot_cgs = M_dot(L_kpc) * Msun / s_yr
