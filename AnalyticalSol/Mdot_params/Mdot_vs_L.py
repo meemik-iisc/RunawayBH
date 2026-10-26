@@ -68,7 +68,7 @@ def v_w(L_kpc):
     return vw_f * np.ones_like(L_kpc)
 
 def M_dot(L_kpc):
-    dL_rise = 10    # scale of rise
+    dL_rise = 30    # scale of rise
     dL_decay = 20  # scale of decay
     M_max  = 0.1
     M_min  = 0.01  # floor it decays TO
@@ -77,7 +77,7 @@ def M_dot(L_kpc):
     # decay = (M_max - M_min) * np.exp(-L_kpc / dL_decay) + M_min
     # Mdot  = rise * decay
     # return Mdot
-    return 1e-3*np.exp(L_kpc/10)
+    return 5e-3*np.exp(L_kpc/15)
 
 def R_0(L_kpc):
     Mdot_cgs = M_dot(L_kpc) * Msun / s_yr
